@@ -25,13 +25,16 @@ resource "random_pet" "number_2" {
 }
 
 output "pet" {
-  value = random_pet.server.id
+  value       = random_pet.server.id
+  description = "first random pet ID"
 }
 
 output "list_of_pets" {
-  value = [random_pet.server.id, random_pet.number_2.id]
+  value       = [random_pet.server.id, random_pet.number_2.id]
+  description = "list of random pet IDs"
 }
 
 output "quoted_some_key" {
-  value = "${var.some_key}"
+  value       = "\"${var.some_key}\""
+  description = "escaped quoted value of some_key"
 }
